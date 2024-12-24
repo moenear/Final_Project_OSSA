@@ -24,6 +24,7 @@ Spesifikasi yang saya gunakan, sebagai berikut:
 5. Screen (Layanan Background Session)
 6. Cron (Jadwal Otomatis Restart atau Backup)
 7. Logrotate (Pengelolaan Log Server)
+8. Fail2Ban (Keamanan Server)
 ## openssh
 
 ### install
@@ -155,7 +156,22 @@ lalu
     create 640 your_username your_group
 }
 ```
-
+## Fail2ban
+### cara install
+```
+sudo apt install fail2ban
+```
+### konfigurasi
+```
+sudo nano /etc/fail2ban/jail.local
+```
+lalu
+```
+[srcds]
+enabled = true
+port = 27015
+protocol = udp
+```
 ## Jalankan server
 ### Navigasi ke Direktori Server Pindah ke folder tempat server L4D2 diinstal:
 ```
